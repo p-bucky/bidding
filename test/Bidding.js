@@ -24,7 +24,7 @@ describe("Bidding", function () {
 
     const startTime = Math.floor(Date.now() / 1000);
     const endTime = startTime + 30 * 24 * 60 * 60;
-    await bidding.createAuction(0, startTime, endTime);
+    await bidding.createAuction(startTime, endTime);
 
     // FIRST BID
     await token.connect(admin).transfer(await bidder1.getAddress(), ethers.parseUnits("10", 6));

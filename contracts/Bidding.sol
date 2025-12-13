@@ -16,12 +16,11 @@ contract Bidding {
     Auction[] public auctions;
 
     function createAuction(
-        uint256 id,
         uint256 startTime,
         uint256 endTime
     ) public {
         Auction memory auction = Auction({
-            id: id,
+            id: auctions.length,
             highestBid: 0,
             highestBidder: address(0),
             startTime: startTime,
